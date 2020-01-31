@@ -50,6 +50,11 @@
 
           {{ $finalContent }}
     </div>
+    
+    <!-- 自定义目录 -->
+    {{ if .Site.Params.toc | default false }}
+    {{ partial "toc" . }}
+    {{ end }}
 
     <div class="post-copyright">
             {{ with .Site.Params.author }} 
@@ -72,7 +77,7 @@
             {{ end }}
     </div>
 
-  
+
     <div class="post-tags">
         {{ with .Params.tags }}
             <section>
